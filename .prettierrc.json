@@ -1,0 +1,11 @@
+{
+  "singleQuote": true,
+  "semi": true,
+  "printWidth": 150,
+  "eslintIntegration": true,
+  "proseWrap": "never",
+  "useTabs": false,
+  "endOfLine": "cr",
+  "htmlWhitespaceSensitivity": "strict",
+  "bracketSpacing": true
+}

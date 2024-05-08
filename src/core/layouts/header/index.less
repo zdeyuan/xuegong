@@ -1,0 +1,113 @@
+.admin-header {
+  padding: 0;
+  z-index: 2;
+  position: relative;
+  background-color: #fff;
+  .head-menu {
+    height: 64px;
+    line-height: 64px;
+    vertical-align: middle;
+    box-shadow: none;
+  }
+  &.night {
+    .head-menu {
+    }
+  }
+  .admin-header-wide {
+    padding-left: 24px;
+    &.head.fixed {
+      max-width: 1400px;
+      margin: auto;
+      padding-left: 0;
+    }
+    &.side {
+      padding-right: 12px;
+    }
+    .logo {
+      height: 64px;
+      line-height: 58px;
+      vertical-align: top;
+      display: inline-block;
+      padding: 0 12px 0 24px;
+      cursor: pointer;
+      font-size: 20px;
+      color: inherit;
+      &.pc {
+        padding: 0 12px 0 0;
+      }
+      img {
+        vertical-align: middle;
+      }
+      h1 {
+        color: inherit;
+        display: inline-block;
+        font-size: 16px;
+      }
+    }
+    .trigger {
+      font-size: 20px;
+      line-height: 64px;
+      padding: 0 24px;
+      cursor: pointer;
+      transition: color 0.3s;
+      &:hover {
+      }
+    }
+    .admin-header-menu {
+      display: inline-block;
+    }
+    .admin-header-right {
+      float: right;
+      display: flex;
+      color: inherit;
+      .header-item {
+        color: inherit;
+        padding: 0 12px;
+        cursor: pointer;
+        align-self: center;
+        a {
+          color: inherit;
+          i {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-avatar {
+  cursor: pointer;
+  padding: 0 15px;
+  .avatar {
+    position: relative;
+    top: -3px;
+  }
+  .name {
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: #878787;
+  }
+  .acion {
+    font-size: 18px !important;
+  }
+}
+.header-img {
+  padding: 0 8px;
+  cursor: pointer;
+  .name {
+    display: inline-block;
+    padding-left: 3px;
+    padding-right: 15px;
+    font-size: 18px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: #878787;
+  }
+  .acion {
+    font-size: 18px !important;
+  }
+}
