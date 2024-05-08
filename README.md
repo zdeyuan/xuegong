@@ -31,14 +31,16 @@
 npm install
 
 - 开发模式运行
-npm run serve
+npm run dev
 
 - 编译项目
 npm run build
 
 ### 项目图片预览
 ![输入图片说明](src/assets/image1.png)
-
+![输入图片说明](src/assets/image2.png)
+![输入图片说明](src/assets/image3.png)
+![输入图片说明](src/assets/image4.png)
 ### 联系方式
 ### 微信联系方式
 
