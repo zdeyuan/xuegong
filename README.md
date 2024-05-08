@@ -1,70 +1,54 @@
-<!--
- * @Descripttion:
- * @version: 1.0
- * @Author: Erik Zhang
- * @Date: 2021-02-11 20:30:49
- * @LastEditors: Erik Zhang
- * @LastEditTime: 2021-03-02 16:24:51
--->
+### 学生管理平台系统
 
-简体中文 | [English](./README.en-US.md)
+### 介绍
 
-<h1 align="center">Vue Antd Admin</h1>
+学生管理系统是基于VUE+ elementui的开源学生管理平台系统；其中提供包含如考勤、奖惩、奖助学金、勤工俭学、保险理赔、心理健康、综合素质、学生评定、毕业、班主任、统计、预约、社团等各个方面的服务，方便用户可以使用本系统快捷、简洁、从容的完成关于学生的数据操作、管理。
 
-<div align="center">
-  
-[Ant Design Pro](https://github.com/ant-design/ant-design-pro) 的 Vue 实现版本  
-开箱即用的中后台前端/设计解决方案
 
-[![MIT](https://img.shields.io/github/license/iczer/vue-antd-admin)](https://github.com/iczer/vue-antd-admin/blob/master/LICENSE) [![Dependence](https://img.shields.io/david/iczer/vue-antd-admin)](https://david-dm.org/iczer/vue-antd-admin) [![DevDependencies](https://img.shields.io/david/dev/iczer/vue-antd-admin)](https://david-dm.org/iczer/vue-antd-admin?type=dev) [![Release](https://img.shields.io/github/v/release/iczer/vue-antd-admin)](https://github.com/iczer/vue-antd-admin/releases/latest) ![image](./src/assets/img/preview.png)
 
-多种主题模式可选：  
-![image](./src/assets/img/preview-nine.png)
+### 软件架构
 
-</div>
+架构上我们选择当下最主流的也是最具兼容性的方案。
+管理后台我们采用 vue2 + elementui 方便你快速的入门并实现开发。相较于传统的jq框架来说，vue2 + elementui 具有更容写逻辑、更容在后台开发中使用标准且美观的样式优点。
+- 基础框架：[ant-design-vue](https://github.com/vueComponent/ant-design-vue) - Ant Design Of Vue 实现
+- JavaScript框架：Vue
+- Webpack
+- node
+- yarn
+- eslint
+- @vue/cli 3.2.1
+- [vue-cropper](https://github.com/xyxiao001/vue-cropper) - 头像裁剪组件
+- [@antv/g2](https://antv.alipay.com/zh-cn/index.html) - Alipay AntV 数据可视化图表
+- [Viser-vue](https://viserjs.github.io/docs.html#/viser/guide/installation)  - antv/g2 封装实现
 
-- 预览地址：https://iczer.gitee.io/vue-antd-admin
-- 使用文档：https://iczer.gitee.io/vue-antd-admin-docs
-- 常见问题：https://iczer.gitee.io/vue-antd-admin-docs/start/faq.html
-- 国内镜像：https://gitee.com/iczer/vue-antd-admin
+### 功能清单
 
-## 浏览器支持
+![输入图片说明](src/assets/image.png)
 
-现代浏览器及 IE10
+### 项目下载和运行
+- 拉取项目代码
+- 安装依赖
+npm install
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
-| --- | --- | --- | --- | --- |
-| IE10, Edge | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
+- 开发模式运行
+npm run serve
 
-## 使用
+- 编译项目
+npm run build
 
-### clone
+### 项目图片预览
+![输入图片说明](src/assets/image1.png)
 
-```bash
-$ git clone https://github.com/iczer/vue-antd-admin.git
-```
+### 联系方式
+### 微信联系方式
 
-### yarn
+![输入图片说明](src/assets/1715140097145.png)</br>
 
-```bash
-$ yarn install
-$ yarn serve
-```
+### QQ群
 
-### or npm
+![输入图片说明](src/assets/63d9778d009ea49532a243ad744328c.png)
+### 期待您的联系
 
-```
-$ npm install
-$ npm run serve
-```
 
-更多信息参考 [使用文档](https://iczer.gitee.io/vue-antd-admin-docs)
 
-## 参与贡献
 
-我们非常欢迎你的贡献，你可以通过以下方式和我们一起共建 :star2:：
-
-- 在你的公司或个人项目中使用 Vue Antd Admin。
-- 通过 [Issue](https://github.com/iczer/vue-antd-admin/issues) 报告:bug:或进行咨询。
-- 提交 [Pull Request](https://github.com/iczer/vue-antd-admin/pulls) 改进 Admin 的代码。
-- 加入社群，与小伙伴们一同交流心得。QQ 群：812277510、610090280（已满）
