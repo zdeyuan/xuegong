@@ -4,7 +4,7 @@
 
 学生管理系统是基于VUE+ elementui的开源学生管理平台系统；其中提供包含如考勤、奖惩、奖助学金、勤工俭学、保险理赔、心理健康、综合素质、学生评定、毕业、班主任、统计、预约、社团等各个方面的服务，方便用户可以使用本系统快捷、简洁、从容的完成关于学生的数据操作、管理。
 
-### 提示：该项目为前后端分离，如需要后端请点击<a href='https://gitee.com/dysxsoft/enrollment-dormitory-backend'>这里</a>
+### 提示：该项目为前后端分离，如需要后端请点击<a href='https://gitee.com/dysxsoft/student-management-backend'>这里</a>
 
 ### 软件架构
 
