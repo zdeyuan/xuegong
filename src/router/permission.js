@@ -28,6 +28,7 @@ router.beforeEach(async (to, from, next) => {
   NProgress.start();
   document.title = getPageTitle(to.meta.title);
   //如果是其他系统过来的 并且有token
+  window.console.log(to.query,'to.query？？？？？？？？？？')
   if (to.path == '/' && to.query && to.query.token) {
     await store.dispatch('user/tokenLogin', { token: to.query.token, appId: to.query.appId }).catch(err => {});
   }

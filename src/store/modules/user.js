@@ -48,6 +48,8 @@ const mutations = {
   },
   SET_USERINFO: (state, result) => {
     state.userInfo = result.userInfo;
+	window.console.log('cnmd',state.userInfo)
+	window.console.log('cnmd',result)
     db.setObj('SYSTEM_LIST', result.manageList);
     db.setObj('menuList', result.menuList);
     state.userId = result.userInfo.id;
