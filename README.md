@@ -37,8 +37,24 @@ npm run dev
 npm run build
 
 ### 项目图片预览
-
-
+![输入图片说明](src/assets/image.png)
+![输入图片说明](src/assets/image1.png)
+![输入图片说明](src/assets/image2.png)
+![输入图片说明](src/assets/image3.png)
+![输入图片说明](src/assets/image4.png)
+![输入图片说明](src/assets/image5.png)
+![输入图片说明](src/assets/image6.png)
+![输入图片说明](src/assets/image7.png)
+![输入图片说明](src/assets/image8.png)
+![输入图片说明](src/assets/image9.png)
+![输入图片说明](src/assets/image10.png)
+![输入图片说明](src/assets/image11.png)
+![输入图片说明](src/assets/image12.png)
+![输入图片说明](src/assets/image13.png)
+![输入图片说明](src/assets/image14.png)
+![输入图片说明](src/assets/image15.png)
+![输入图片说明](src/assets/image16.png)
+![输入图片说明](src/assets/image17.png)
 ### 相关证书
 ![输入图片说明](src/assets/e152695380ca6946a99e1e66c58680c.jpg)
 
