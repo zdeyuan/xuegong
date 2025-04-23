@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import veBaseStudentApi from '@/module/stu/base/api/veBaseStudentApi';
+import veBaseStudentApi from '@/views/stuManage/xjManage/api/veBaseStudentApi';
 
 export default {
   components: {},

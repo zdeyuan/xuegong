@@ -7,7 +7,7 @@
  * @LastEditTime: 2021-05-31 23:29:34
 -->
 <template>
-  <edu-tree-select ref="eduTree" :width="width" :check="false" :nodes="treeNodes"></edu-tree-select>
+  <edu-tree-select ref="eduTree" @onChange="handleChange" :width="width" :check="false" :nodes="treeNodes"></edu-tree-select>
 </template>
 
 <script>
@@ -24,11 +24,11 @@ export default {
       default: '200px'
     },
     value: {
-      type: [String, Array],
-      default: function() {
-        return [];
-      }
-    }
+	  type: Number,
+	  default: function() {
+		return 0;
+	  }
+	}
   },
   data() {
     const data = {
@@ -36,7 +36,15 @@ export default {
     };
     return data;
   },
-
+watch: {
+	value: {
+	  immediate: true,
+	  handler(newVal) {
+		// 当外部传入的 value 发生变化时，更新内部的值
+		this.$refs.eduTree.setValue(newVal);
+	  }
+	}
+  },
   mounted() {
     this.init();
   },
@@ -63,7 +71,12 @@ export default {
         });
         this.treeNodes = res.result;
       });
-    }
+    },
+	 handleChange() {
+	  // 当用户选择节点时，触发 input 事件，并将新的值传递给父组件
+	  const selectedValue = this.$refs.eduTree.getValue();
+	  this.$emit('input', selectedValue);
+	}
   }
 };
 </script>

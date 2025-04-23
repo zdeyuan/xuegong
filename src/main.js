@@ -1,80 +1,68 @@
-/*
- * @Descripttion:
- * @version: 1.0
- * @Author: Erik Zhang
- * @Date: 2021-02-09 17:14:13
- * @LastEditors: Erik Zhang
- * @LastEditTime: 2021-02-27 12:40:16
- */
-import Vue from 'vue';
+// VueJS
+import './config'
+import Vue from 'vue'
+// Ant Design Vue
 import Antd from 'ant-design-vue';
+import Storage from 'vue-ls'
+// Vue Router
+import router from './router'
+import store from './store/'
+import Print from 'vue-print-nb'
+Vue.use(Print)
 import 'ant-design-vue/dist/antd.css';
+import Photoswipe from 'vue-pswipe'
+import '@/utils/lazy_antd'
+import '@/utils/filter'
+import config from '@/defaultSettings'
+import '@/permission'
+Vue.config.productionTip = false;
+Vue.use(Antd);
+Vue.use(Storage, config.storageOptions)
+// Photoswipe Gallery
+import DatePickByCN from '@/components/DatePickByCN.vue';
+Vue.component('DatePickByCN', DatePickByCN);
+Vue.use(Photoswipe)
+import './scss/app.scss';
+// Template Layouts
 
-import App from '@/core/App.vue';
-import router from './router';
-import Viser from 'viser-vue';
-import store from '@/store';
-import 'animate.css/source/animate.css';
-import Plugins from '@/core/plugins';
-/* 屏幕自适应 */
-import '@/core/flexible/flexible.js';
-
-/* 自定义的 */
-import '@/router/permission'; // 路由守卫
-
-//图标库
-import '@/assets/iconfont/iconfont.css';
-import '@/assets/basefont/iconfont.less';
-import '@/assets/iconfont/iconfont-color.css';
-
-/* 自定义的样式 */
-import '@/assets/css/base.less';
-import '@/assets/css/ant-ext.less';
-//第三方的 ztree的基础样式
-import '@/assets/css/beauty-ztree.css';
-//ztree的样式
-import '@/core/edu/EduTree/ztreeIcon.css';
-/* 自定义的JS */
+// Main application view
+import App from './App.vue'
 // 引入自定义组件。index.js是组件的默认入口`
-import edu from '@/core/edu';
+import edu from '@/utils/edu';
+Vue.use(edu);
 
-//引入全局js 工具类
-import http from '@/utils/http'; // permission control
-import db from '@/utils/db';
-import config from '@/config/config';
+// App Styling
+import JDictSelectTag from '@/components/dict/index.js'
+import permissionPlugin from '@/plugins/permissionPlugin.js';
+Vue.use(JDictSelectTag)
+Vue.use(permissionPlugin)
+import EduComponents from '@/components/edu/index'
+import utils from '@/utils/kq/utils';
+import http from '@/utils/kq/http';
+import db from '@/utils/kq/db';
+import config1 from '@/config/config';
 import constant from '@/config/constant';
-import dist from '@/utils/dist';
-import date from '@/utils/date';
-import utils from '@/utils/utils';
-import loading from '@/utils/loading';
+import dist from '@/utils/kq/dist';
+import date from '@/utils/kq/date';
+import loading from '@/utils/kq/loading';
 Vue.prototype.$http = http;
+Vue.prototype.$utils = utils;
 Vue.prototype.$db = db;
-Vue.prototype.$config = config;
+Vue.prototype.$config = config1;
 Vue.prototype.$dist = dist;
 Vue.prototype.$date = date;
-Vue.prototype.$utils = utils;
 Vue.prototype.$constant = constant;
-Vue.prototype.$loadingUtil = loading;
+import Viser from 'viser-vue'
+Vue.use(Viser)
+Vue.use(EduComponents);
+import DefaultLayout from '@/components/layouts/Default.vue'
 
-//工具类-消息框
-import msgUtil from '@/utils/msgUtil';
-Vue.use(msgUtil);
 
-Vue.use(edu);
-/*  */
-
-Vue.use(Antd);
-
-/* 自定义required的规则 */
-import EduForm from '@/core/edu/form-model';
-Vue.use(EduForm);
-
-Vue.config.productionTip = false;
-Vue.use(Viser);
-Vue.use(Plugins);
-
-window.$vm = new Vue({
+// Adding template layouts to the vue components.
+Vue.component("layout-default", DefaultLayout);
+// Initialize Vue
+window.$vm =new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app');
+}).$mount('#app')

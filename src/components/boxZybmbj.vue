@@ -50,7 +50,7 @@ export default {
   props: {
     width: {
       type: String,
-      default: '200px'
+      default: '150px'
     },
     ofalId: {
       type: String,
@@ -176,17 +176,21 @@ grade_id */
       }
       if (config.fal) {
         data.falId = this.falId;
-        this.yuanxiList.forEach(element => {
-          if (element.id == this.falId) data.falText = element.yxmc;
-        });
+		if(this.yuanxiList&&this.yuanxiList.length>0){
+			this.yuanxiList.forEach(element => {
+			  if (element.id == this.falId) data.falText = element.yxmc;
+			});
+			}
       }
 
       if (config.zy) {
-        const zyList = this.$refs.eduTree.getValueData();
-        if (zyList && zyList.length > 0) {
-          data.specId = zyList[0].id;
-          data.specText = zyList[0].value;
-        }
+		  if(this.$refs.eduTree){
+			  const zyList = this.$refs.eduTree.getValueData();
+			  if (zyList && zyList.length > 0) {
+			    data.specId = zyList[0].id;
+			    data.specText = zyList[0].value;
+			  }
+		  }
       }
 
       data.bjId = this.bjId;

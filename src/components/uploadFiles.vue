@@ -35,24 +35,19 @@
         </a-table-column>
       </a-table>
     </div>
+	 <a-spin v-if="isShow"/>
   </div>
 </template>
 
 <script>
 import { getToken } from '@/utils/auth';
-import http from '@/utils/http';
+import http from '@/utils/kq/http';
 export default {
   props: {
     url: {
       type: String,
       default:
-        process.env.VUE_APP_SYSTEM_NAME == '教科研管理系统'
-          ? http.service.jkl + 'veJkyFile/upload'
-          : process.env.VUE_APP_SYSTEM_NAME == '设备资产管理系统'
-          ? http.service.sbzc + 'veSbzcFile/upload'
-          : process.env.VUE_APP_SYSTEM_NAME == '学生管理系统'
-          ? http.service.stu + 'veStuFile/upload'
-          : http.service.hq + 'veHqFile/upload'
+         http.service.stu + 'veStuFile/upload'
     },
     name: {
       type: String, //默认的后台名称
@@ -75,6 +70,11 @@ export default {
       type: String,
       default: 'all'
     },
+	type: {
+	  //all image json world
+	  type: String,
+	  default: ''
+	},
     extArr: {
       //允许的扩展名列表
       type: Array,
@@ -160,15 +160,8 @@ export default {
       data.tipMsg += data.fileNoMsg;
     }
     data.restFileList = [];
-
-    data.urlController = 'veHqFile';
-    if (process.env.VUE_APP_SYSTEM_NAME == '设备资产管理系统') {
-      data.urlController = 'veSbzcFile';
-    } else if (process.env.VUE_APP_SYSTEM_NAME == '学生管理系统') {
-      data.urlController = 'veStuFile';
-    } else if (process.env.VUE_APP_SYSTEM_NAME == '教科研管理系统') {
-      data.urlController = 'veJkyFile';
-    }
+	data.isShow=false;
+    data.urlController = 'veStuFile';
     return data;
   },
   computed: {
@@ -186,6 +179,7 @@ export default {
   },
   methods: {
     httpRequest(option) {
+	  this.isShow=true;
       let formData = new FormData();
       formData.set(this.name, option.file);
       formData.set('serviceType', this.serviceType);
@@ -197,7 +191,6 @@ export default {
           });
         }
       }
-
       const config = {
         onUploadProgress: e => {
           if (e.total > 0) {
@@ -213,14 +206,16 @@ export default {
             this.fileList.push(res.result);
             this.$emit('upload', res);
           }
+		  this.isShow=false;
           option.onSuccess(res);
         })
         .catch(error => {
+		  this.isShow=false;
           option.onError(error);
         });
     },
     downFile(id, fileName) {
-      this.$http.downLoad(this.$http.service.jkl + this.urlController + '/download?id=' + id, fileName);
+      this.$http.downLoad('/stu/veStuFile/download?id=' + id, fileName);
     },
     removeFile(index) {
       this.fileList.splice(index, 1);
@@ -264,15 +259,17 @@ export default {
     //回显附件
     setValue(busiId, id) {
       let url = '';
-      if (process.env.VUE_APP_SYSTEM_NAME == '教科研管理系统') {
-        url = http.service.jkl;
-      } else if (process.env.VUE_APP_SYSTEM_NAME == '设备资产管理系统') {
-        url = http.service.sbzc;
-      } else if (process.env.VUE_APP_SYSTEM_NAME == '学生管理系统') {
-        url = http.service.stu;
-      } else {
-        url = http.service.hq;
-      }
+   //    if (this.type == '教科研管理系统') {
+   //      url = http.service.jkl;
+   //    } else if (process.env.VUE_APP_SYSTEM_NAME == '设备资产管理系统') {
+   //      url = http.service.sbzc;
+   //    } else if (process.env.VUE_APP_SYSTEM_NAME == '学生管理系统') {
+   //      url = http.service.stu;
+   //    } 
+	  // else {
+   //      url = http.service.hq;
+   //    }
+      url = http.service.stu;
       url += `/${this.urlController}/list?serviceId=${busiId}&serviceType=${this.serviceType}&id=${id || ''}`;
 
       http.get(url).then(res => {

@@ -8,7 +8,7 @@
 -->
 <template>
   <div class="edit_container">
-    <vue-editor id="editor" useCustomImageHandler @imageAdded="handleImageAdded" v-model="content"> </vue-editor>
+    <vue-editor id="editor" useCustomImageHandler  @imageAdded="handleImageAdded" v-model="content"> </vue-editor>
   </div>
 </template>
 <script>

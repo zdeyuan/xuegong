@@ -1,34 +1,19 @@
-/*
- * @Descripttion:
- * @version: 1.0
- * @Author: Erik Zhang
- * @Date: 2021-02-12 00:12:09
- * @LastEditors: Erik Zhang
- * @LastEditTime: 2021-02-13 21:14:19
+/**
+ * 弃用
  */
-import Cookies from "js-cookie";
+import { setStore, getStore, clearStore } from "@/utils/storage"
 
-const TokenKey = "vue_admin_template_token";
+export const TokenKey = 'Access-Token'
 
 export function getToken() {
-  // const token = Cookies.get(TokenKey)
-  const token = localStorage.getItem("token");
-  if (token) {
-    try {
-      return token;
-    } catch (error) {
-      console.error("getToken 失败", error);
-      return null;
-    }
-  } else {
-    return null;
-  }
+  return getStore(TokenKey)
 }
 
 export function setToken(token) {
-  return localStorage.setItem("token", token);
+  // key, token, timeout = 86400s
+  return setStore(TokenKey, token, 86400)
 }
 
 export function removeToken() {
-  return localStorage.removeItem("token");
+  return clearStore(TokenKey)
 }

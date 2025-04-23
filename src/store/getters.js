@@ -1,20 +1,33 @@
-/*
- * @Descripttion:
- * @version: 1.0
- * @Author: Erik Zhang
- * @Date: 2020-06-03 14:04:12
- * @LastEditors: Erik Zhang
- * @LastEditTime: 2021-02-12 22:00:46
- */
+import Vue from 'vue'
+import { USER_INFO, ENHANCE_PRE } from "@/store/mutation-types"
 const getters = {
-  token: (state) => state.user.token,
-  userInfo: (state) => state.user.userInfo,
-  departs: (state) => state.user.departs,
-  menus: (state) => state.user.menus,
-  userId: (state) => state.user.userId,
-  selectMenuId: (state) => state.user.selectMenuId,
-  selectMenuName: (state) => state.user.selectMenuName,
-  gisUtil: (state) => state.gis.gisUtil,
-  borderUtil: (state) => state.border.borderUtil,
-};
-export default getters;
+  device: state => state.app.device,
+  theme: state => state.app.theme,
+  color: state => state.app.color,
+  token: state => state.user.token,
+  avatar: state => {state.user.avatar = Vue.ls.get(USER_INFO).avatar; return state.user.avatar},
+  username: state => state.user.username,
+  nickname: state => {state.user.realname = Vue.ls.get(USER_INFO).realname; return state.user.realname},
+  welcome: state => state.user.welcome,
+  roles: state => state.user.roles,
+  addRouters: state => state.permission.addRouters,
+  permissionList: state => state.user.permissionList,
+  sidebarVisible:  state => state.siderbar.sidebarVisible,
+  activeMenuItem: state => state.siderbar.activeMenuItem,
+  menus: state => state.siderbar.menus,
+  sideObj:state => state.siderbar.sideObj,
+  navItems: state => state.siderbar.navItems,
+  navSelectedKey: state => state.siderbar.navSelectedKey,
+  sideSelectKey: state => state.siderbar.sideSelectKey,
+  menuSelectKey: state => state.siderbar.menuSelectKey,
+  isMenusLoading: state => state.siderbar.isMenusLoading,
+  userInfo: state => {state.user.info = Vue.ls.get(USER_INFO); return state.user.info},
+  onlAuthFields: state => {return state.online.authFields },
+  enhanceJs:(state) => (code) => {
+    state.enhance.enhanceJs[code] = Vue.ls.get(ENHANCE_PRE+code);
+    return state.enhance.enhanceJs[code]
+  }
+
+}
+
+export default getters

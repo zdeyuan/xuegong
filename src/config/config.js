@@ -8,7 +8,7 @@
  */
 const config = {
   systemName: process.env.VUE_APP_SYSTEM_NAME,
-  isRemoteMenu: false, //是否读取服务器菜单
+  isRemoteMenu: true, //是否读取服务器菜单
   //各个服务的名称列表
   service: {
     sys: '',
@@ -16,11 +16,14 @@ const config = {
     hq: 'logistics/',
     sbzc: 'sbzc/',
     base: 'common/',
-    stu: 'edu-stu/',
-	sanming: 'edu-sanming/sanming/'
+    stu: 'stu/',
+	kwgl:'kwgl/',
+	sanming: 'sanming/sanming/'
   }
 };
 if (process.env.NODE_ENV === 'development') {
   config.isRemoteMenu = false;
+  // config.service.sys = 'http://192.168.0.13:9000/';
+  //config.service.base = 'http://192.168.0.13:9000/common/';
 }
 export default config;

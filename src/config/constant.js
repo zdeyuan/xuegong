@@ -103,6 +103,12 @@ const constant = {
     /*   { value: '餐厅', id: '2' }, */
     { value: '保安员', id: '3' }
   ],
+  // 留宿类型
+  accommodateType: [
+    { value: '暑假留宿', id: 0 },
+    /*   { value: '餐厅', id: '2' }, */
+    { value: '寒假留宿', id: 1 }
+  ],
   hqUserStatus: [
     { value: '在岗', id: 1 },
     { value: '离岗', id: 2 }
@@ -165,7 +171,7 @@ const constant = {
   ],
   zzmmm: [
     { value: '群众', id: '1' },
-    { value: '团队', id: '2' },
+    { value: '团员', id: '2' },
     { value: '党员', id: '3' },
     { value: '预备党员', id: '4' }
   ],
@@ -241,6 +247,10 @@ const constant = {
     { value: '通过', id: 1 },
     { value: '不通过', id: 2 }
   ],
+  biyeAuditStatus: [
+    { value: '通过', id: 1 },
+    { value: '不通过', id: 0 }
+  ],
   biyeStatus: [
     { value: '待审核', id: -1 },
     { value: '通过', id: 1 },
@@ -278,6 +288,20 @@ const constant = {
     { value: '早自习', id: '早自习' },
     { value: '晚自习', id: '晚自习' }
   ],
+  checkName:[
+	  {value: '第一节', id: '1'},
+	  {value: '第二节', id: '2'},
+	  {value: '第三节', id: '3'},
+	  {value: '第四节', id: '4'},
+	  {value: '第五节', id: '5'},
+	  {value: '第六节', id: '6'},
+	  {value: '第七节', id: '7'},
+	  {value: '第八节', id: '8'},
+	  {value: '第九节', id: '9'},
+	  {value: '晚自习第一节', id: '10'},
+	  {value: '晚自习第二节', id: '11'},
+	  {value: '晚自习第三节', id: '12'}
+  ],
   awardLevel: [
     { value: '一等奖', id: 0 },
     { value: '二等奖', id: 1 },
@@ -292,6 +316,10 @@ const constant = {
     { value: '心里咨询教师', id: 1 },
     { value: '区级教室场地', id: 2 },
     { value: '设备', id: 3 }
+  ],
+  qrStatus: [
+    { value: '已确认', id: 1 },
+    { value: '未确认', id: 0 }
   ],
   yyXinz: [
     { value: '自定义预约', id: 1 },

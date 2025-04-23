@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import sysUserApi from '@/api/sysUserApi';
+import sysUserApi from '@/api/common/sysUserApi';
 import userSelectFrom from '@/components/userSelectFrom';
 
 export default {
@@ -86,11 +86,12 @@ export default {
       this.visible = true;
     },
     getValue() {
+		console.log("getValue",this.check,this.selectList)
       if (this.check) {
         return this.selectList.map(item => item.id);
       } else {
         if (this.selectList.length > 0) {
-          return this.selectList[0].id + '';
+          return this.selectList[0].id;
         }
         return null;
       }
@@ -108,6 +109,7 @@ export default {
     getObj() {
       if (this.check) {
         return this.selectList.map(item => {
+			console.log(item,'item????????')
           return {
             id: item.id,
             name: item.name
@@ -115,6 +117,7 @@ export default {
         });
       } else {
         if (this.selectList.length > 0) {
+			console.log(this.selectList,'this.selectList????????')
           return {
             id: this.selectList[0].id,
             name: this.selectList[0].name
@@ -128,7 +131,7 @@ export default {
       this.selectList.splice(0, this.selectList.length);
       objs.forEach(element => {
         this.selectList.push({
-          id: element.id,
+          id: element.gh,
           name: element[nameKey]
         });
       });
@@ -138,11 +141,12 @@ export default {
       if (!ids || ids.length == 0) {
         return;
       }
+	  
       ids.forEach(id => {
-        sysUserApi.getTea(id).then(res => {
+        sysUserApi.getTeaByGh(id).then(res => {
           const po = res.result;
           this.selectList.push({
-            id: po.id,
+            id: po.gh,
             name: po.xm
           });
         });
@@ -155,18 +159,19 @@ export default {
         if (this.check) {
           data.forEach(po => {
             this.selectList.push({
-              id: po.id,
+              id: po.gh,
               name: po.xm
             });
           });
         } else {
           const po = data[0];
           this.selectList.push({
-            id: po.id,
+            id: po.gh,
             name: po.xm
           });
         }
       }
+	  console.log("this.selectList",this.selectList)
       this.visible = false;
     },
     handelCancel() {

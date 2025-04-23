@@ -1,42 +1,40 @@
-<!--
- * @Descripttion: 
- * @version: 1.0
- * @Author: Erik Zhang
- * @Date: 2021-02-11 20:30:48
- * @LastEditors: Erik Zhang
- * @LastEditTime: 2021-03-20 11:57:14
+<!-- 
+  =========================================================
+  * Muse Vue Ant Design Dashboard PRO - v1.0.0
+  =========================================================
+
+  * Product Page: https://www.creative-tim.com/product/muse-vue-ant-design-dashboard-pro
+  * Copyright 2021 Creative Tim (https://www.creative-tim.com)
+
+  * Coded by Creative Tim
+
+  =========================================================
+
+  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
+
 <!DOCTYPE html>
-<html lang="en" class="beauty-scroll">
+<html lang="">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-    <meta http-equiv="Expires" content="0" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Cache-control" content="no-cache" />
-    <meta http-equiv="Cache" content="no-cache" />
-    <title><%= process.env.VUE_APP_NAME %></title>
-    <!-- require cdn assets css -->
-    <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.css) { %>
-    <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" />
-    <% } %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/png" href="<%= BASE_URL %>favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+	<script>
+	  window._CONFIG = {};
+	</script>
   </head>
   <body>
     <noscript>
-      <strong
-        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to
-        continue.</strong
-      >
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="popContainer" class="beauty-scroll" style="height: 100vh;">
-      <div id="app"></div>
-    </div>
-	<!-- require cdn assets js -->
-	<% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
-	<script type="text/javascript" src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
-	<% } %>
+    <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <!-- 全局配置 -->
+  
 </html>
