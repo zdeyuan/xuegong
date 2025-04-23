@@ -23,7 +23,7 @@
 
 ### 功能清单
 
-![输入图片说明](src/assets/image.png)
+![输入图片说明](src/assets/gn.png)
 
 ### 项目下载和运行
 - 拉取项目代码
@@ -37,10 +37,7 @@ npm run dev
 npm run build
 
 ### 项目图片预览
-![输入图片说明](src/assets/image1.png)
-![输入图片说明](src/assets/image2.png)
-![输入图片说明](src/assets/image3.png)
-![输入图片说明](src/assets/image4.png)
+
 
 ### 相关证书
 ![输入图片说明](src/assets/e152695380ca6946a99e1e66c58680c.jpg)
